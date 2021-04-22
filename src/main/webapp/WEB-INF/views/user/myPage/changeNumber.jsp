@@ -27,27 +27,30 @@
 		<!-- content -->
 		<section id="content">
 			<h3>현재 사이트에 등록된 비밀번호와 변경하실 새로운 휴대폰 번호를 입력하세요.</h3>
+			<form action="changeNumber" method="post">
 			<!-- content-box -->
 			<div class="content-box">
 				<!-- change-pn-box -->
 				<div class="change-pn-box">
 					<div class="area">
+					<input type="hidden" name="email" value="${email}">
 						<div class="input-box">
 							<label for="pn">비밀번호</label>
-							<input type="text" id="pn" placeholder="비밀번호를 입력하세요."/>
+							<input type="text" id="pn" name="password" placeholder="비밀번호를 입력하세요."/>
 						</div>
 					</div>
 					<div class="area">
 						<div class="input-box">
 							<label for="phone">휴대폰번호</label>
-							<input type="text" id="phone" placeholder="휴대폰번호를 입력하세요."/>
+							<input type="text" id="phone" name="phone" placeholder="휴대폰번호를 입력하세요."/>
 						</div>
 					</div>
 				</div>
 				<!-- // change-pn-box -->
 			</div>
 			<!-- // content-box -->
-			<input type="button" class="change-pn-btn" value="인증번호 발송" />
+			<input type="submit" class="change-pn-btn" value="휴대폰번호 변경" />
+			</form>
 			<!-- content-box -->
 			<div class="content-box result">
 				<!-- result-box -->
