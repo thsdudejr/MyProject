@@ -8,7 +8,7 @@
 <c:if test="${sessionScope.email != null}">
 	<li class="user-id">${vo.email}</li>
 	<li><a href="logout" class="top-menu-btn">로그아웃</a></li>
-	<li><a href="#e">마이페이지</a></li>
+	<li><a href="myPage">마이페이지</a></li>
 </c:if>
 	<!-- //login -->
 	<!-- logout -->

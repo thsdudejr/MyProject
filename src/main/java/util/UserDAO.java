@@ -38,5 +38,12 @@ public class UserDAO {
 	public List<AllBusVO> terminalList(String area) {
 		return sql.selectList(US + "terminalList", area);
 	}
+	
+	public int changePW(UserVO vo) {
+		return sql.update(US+"changePW",vo);
+	}
+	public int changeNumber(UserVO vo) {
+		return sql.update(US+"changeNumber",vo);
+	}
 
 }

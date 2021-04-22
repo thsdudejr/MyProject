@@ -28,19 +28,22 @@
 		<section id="content">
 			<h3>안전한 고속버스 홈페이지 사용을 위하여<br>새로운 비밀번호로 교체하세요.</h3>
 			<!-- content-box -->
+			<form action="changePW" method="post">
 			<div class="content-box">
 				<!-- change-pw-box -->
+				<input type="hidden" name="email" value="${email}">
 				<div class="change-pw-box">
+				
 					<div class="area">
 						<div class="input-box">
 							<label for="pw">현재 비밀번호</label>
-							<input type="password" id="pw" placeholder="현재 비밀번호를 입력하세요."/>
+							<input type="password" id="pw" name="password" placeholder="현재 비밀번호를 입력하세요."/>
 						</div>
 					</div>
 					<div class="area">
 						<div class="input-box">
 							<label for="new-pw">새 비밀번호</label>
-							<input type="password" id="new-pw" placeholder="영문, 숫자 8자리 이상"/>
+							<input type="password" id="new-pw" name="newPW" placeholder="영문, 숫자 8자리 이상"/>
 						</div>
 					</div>
 					<div class="area">
@@ -49,11 +52,13 @@
 							<input type="password" id="re-pw" placeholder="새 비밀번호를 재입력하세요"/>
 						</div>
 					</div>
+					
 				</div>
 				<!-- // change-pw-box -->
 			</div>
 			<!-- // content-box -->
-			<input type="button" class="change-pw-btn" value="비밀번호 변경" />
+			<input type="submit" class="change-pw-btn" value="비밀번호 변경" />
+			</form>
 		</section>
 		<!-- // content -->
 		<!-- footer -->

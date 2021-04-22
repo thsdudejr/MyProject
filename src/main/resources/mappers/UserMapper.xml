@@ -31,6 +31,16 @@
 		SELECT * FROM all_bus_tb WHERE area = #{value}
 	</select>
 	
+	<update id="changePW">
+	update member_tb set password = #{newPW}
+	where email = #{email} and password = #{password}
+	</update>
+	
+	<update id="changeNumber">
+	update member_tb set phone = #{phone}
+	where email = #{email}
+	</update>
+	
 	
 	
 	

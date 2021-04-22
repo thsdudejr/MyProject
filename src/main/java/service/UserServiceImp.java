@@ -41,7 +41,16 @@ public class UserServiceImp implements UserService {
 	public List<AllBusVO> terminalList(String area){
 		return dao.terminalList(area);
 	}
-
+	
+	@Override
+	public int changePW(UserVO vo) {
+		return dao.changePW(vo);
+	}
+	
+	@Override
+	public int changeNumber(UserVO vo) {
+		return dao.changeNumber(vo);
+	}
 
 	
 	

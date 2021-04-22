@@ -20,4 +20,8 @@ public interface UserService {
 	
 	public List<AllBusVO> terminalList(String area);
 	
+	public int changePW(UserVO vo);
+	
+	public int changeNumber(UserVO vo);
+	
 }

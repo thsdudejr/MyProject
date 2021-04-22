@@ -8,6 +8,15 @@ public class UserVO {
 	private String birthd;
 	private int point;
 	private String registration_date;
+	private String newPW;
+
+	public String getNewPW() {
+		return newPW;
+	}
+
+	public void setNewPW(String newPW) {
+		this.newPW = newPW;
+	}
 
 	public String getRegistration_date() {
 		return registration_date;

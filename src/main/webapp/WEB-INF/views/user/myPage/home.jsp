@@ -80,7 +80,7 @@
 			<div class="content-box">
 				<div class="info-box">
 					<p class="sm-text">계정정보</p>
-					<span class="m-text">test@test.com</span>
+					<span class="m-text">${myinfo.email}</span>
 					<div class="page-move">
 						<a href="changePW" class="first">비밀번호 변경 <img src="resources/user/images/myPage/home/arrow.png" alt="arrow" title="arrow" /></a>
 						<a href="ticketList" data-toggle="modal" data-target="#withdrawal">회원탈퇴 <img src="resources/user/images/myPage/home/arrow.png" alt="arrow" title="arrow" /></a>
@@ -88,7 +88,7 @@
 				</div>
 				<div class="info-box">
 					<p class="sm-text">휴대폰번호</p>
-					<span class="m-text">01099998888</span>
+					<span class="m-text">${myinfo.phone}</span>
 					<div class="page-move">
 						<a href="changeNumber">휴대폰번호 변경 <img src="resources/user/images/myPage/home/arrow.png" alt="arrow" title="arrow" /></a>
 					</div>

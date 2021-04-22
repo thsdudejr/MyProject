@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -164,7 +165,10 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/myPage")
-	public ModelAndView myPage(ModelAndView mv) {
+	public ModelAndView myPage(ModelAndView mv , UserVO vo, HttpSession session) {
+		vo.setEmail((String)session.getAttribute("email"));
+		vo= Service.selectOne(vo);
+		mv.addObject("myinfo",vo);
 		mv.setViewName("user/myPage/home");
 		return mv;
 	}
@@ -174,12 +178,27 @@ public class UserController {
 		mv.setViewName("user/myPage/changeNumber");
 		return mv;
 	}
+	@RequestMapping(value = "/changeNumber" ,method = RequestMethod.POST)
+	public ModelAndView changeNumber (ModelAndView mv , UserVO vo) {
+		Service.changeNumber(vo);
+		mv.setViewName("redirect:/main");
+		return mv;
+	}
+	
 
 	@RequestMapping(value = "/changePW")
 	public ModelAndView changePW(ModelAndView mv) {
 		mv.setViewName("user/myPage/changePW");
 		return mv;
 	}
+	@RequestMapping(value = "/changePW" ,method = RequestMethod.POST)
+	public ModelAndView changePW(ModelAndView mv , UserVO vo, HttpSession session) {
+		Service.changePW(vo);
+		session.invalidate();
+		mv.setViewName("redirect:/login");
+		return mv;
+	}
+	
 
 	@RequestMapping(value = "/ticketList")
 	public ModelAndView ticketList(ModelAndView mv) {
